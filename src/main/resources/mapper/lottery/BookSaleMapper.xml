@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookSaleMapper">
+    
+    <resultMap type="BookSale" id="BookSaleResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="bookId"    column="book_id"    />
+        <result property="phone"    column="phone"    />
+        <result property="address"    column="address"    />
+        <result property="sendType"    column="send_type"    />
+        <result property="createTime"    column="create_time"    />
+    </resultMap>
+
+    <sql id="selectBookSaleVo">
+        select id, name, book_id, phone, address, send_type, create_time from book_sale
+    </sql>
+
+    <select id="selectBookSaleList" parameterType="BookSale" resultMap="BookSaleResult">
+        <include refid="selectBookSaleVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="bookId != null "> and book_id = #{bookId}</if>
+            <if test="phone != null  and phone != ''"> and phone = #{phone}</if>
+            <if test="sendType != null  and sendType != ''"> and send_type = #{sendType}</if>
+            <if test="createTime != null "> and create_time = #{createTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectBookSaleById" parameterType="Long" resultMap="BookSaleResult">
+        <include refid="selectBookSaleVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookSale" parameterType="BookSale" useGeneratedKeys="true" keyProperty="id">
+        insert into book_sale
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">name,</if>
+            <if test="bookId != null">book_id,</if>
+            <if test="phone != null">phone,</if>
+            <if test="address != null">address,</if>
+            <if test="sendType != null">send_type,</if>
+            <if test="createTime != null">create_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">#{name},</if>
+            <if test="bookId != null">#{bookId},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="address != null">#{address},</if>
+            <if test="sendType != null">#{sendType},</if>
+            <if test="createTime != null">#{createTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookSale" parameterType="BookSale">
+        update book_sale
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="bookId != null">book_id = #{bookId},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="sendType != null">send_type = #{sendType},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookSaleById" parameterType="Long">
+        delete from book_sale where id = #{id}
+    </delete>
+
+    <delete id="deleteBookSaleByIds" parameterType="String">
+        delete from book_sale where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

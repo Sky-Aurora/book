@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookCartMapper">
+    
+    <resultMap type="BookCart" id="BookCartResult">
+        <result property="id"    column="id"    />
+        <result property="bookId"    column="book_id"    />
+        <result property="amount"    column="amount"    />
+        <result property="customerId"    column="customer_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="price"    column="price"    />
+    </resultMap>
+
+    <sql id="selectBookCartVo">
+        select id, book_id, amount, customer_id, create_time, price from book_cart
+    </sql>
+
+    <select id="selectBookCartList" parameterType="BookCart" resultMap="BookCartResult">
+        <include refid="selectBookCartVo"/>
+        <where>  
+            <if test="bookId != null "> and book_id = #{bookId}</if>
+            <if test="params.beginCreateTime != null and params.beginCreateTime != '' and params.endCreateTime != null and params.endCreateTime != ''"> and create_time between #{params.beginCreateTime} and #{params.endCreateTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectBookCartById" parameterType="Long" resultMap="BookCartResult">
+        <include refid="selectBookCartVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookCart" parameterType="BookCart" useGeneratedKeys="true" keyProperty="id">
+        insert into book_cart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">book_id,</if>
+            <if test="amount != null">amount,</if>
+            <if test="customerId != null">customer_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="price != null">price,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">#{bookId},</if>
+            <if test="amount != null">#{amount},</if>
+            <if test="customerId != null">#{customerId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="price != null">#{price},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookCart" parameterType="BookCart">
+        update book_cart
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="bookId != null">book_id = #{bookId},</if>
+            <if test="amount != null">amount = #{amount},</if>
+            <if test="customerId != null">customer_id = #{customerId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="price != null">price = #{price},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookCartById" parameterType="Long">
+        delete from book_cart where id = #{id}
+    </delete>
+
+    <delete id="deleteBookCartByIds" parameterType="String">
+        delete from book_cart where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

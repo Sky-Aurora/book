@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookBooksMapper">
+    
+    <resultMap type="BookBooks" id="BookBooksResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="info"    column="info"    />
+        <result property="author"    column="author"    />
+        <result property="publisher"    column="publisher"    />
+        <result property="category"    column="category"    />
+        <result property="pic"    column="pic"    />
+        <result property="pubTime"    column="pub_time"    />
+        <result property="amount"    column="amount"    />
+        <result property="price"    column="price"    />
+    </resultMap>
+
+    <sql id="selectBookBooksVo">
+        select id, name, info, author, publisher, category, pic, pub_time, amount, price from book_books
+    </sql>
+
+    <select id="selectBookBooksList" parameterType="BookBooks" resultMap="BookBooksResult">
+        <include refid="selectBookBooksVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="author != null  and author != ''"> and author like concat('%', #{author}, '%')</if>
+            <if test="publisher != null  and publisher != ''"> and publisher like concat('%', #{publisher}, '%')</if>
+            <if test="category != null  and category != ''"> and category = #{category}</if>
+            <if test="params.beginPubTime != null and params.beginPubTime != '' and params.endPubTime != null and params.endPubTime != ''"> and pub_time between #{params.beginPubTime} and #{params.endPubTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectBookBooksById" parameterType="Long" resultMap="BookBooksResult">
+        <include refid="selectBookBooksVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookBooks" parameterType="BookBooks" useGeneratedKeys="true" keyProperty="id">
+        insert into book_books
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">name,</if>
+            <if test="info != null">info,</if>
+            <if test="author != null">author,</if>
+            <if test="publisher != null">publisher,</if>
+            <if test="category != null and category != ''">category,</if>
+            <if test="pic != null and pic != ''">pic,</if>
+            <if test="pubTime != null">pub_time,</if>
+            <if test="amount != null">amount,</if>
+            <if test="price != null">price,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">#{name},</if>
+            <if test="info != null">#{info},</if>
+            <if test="author != null">#{author},</if>
+            <if test="publisher != null">#{publisher},</if>
+            <if test="category != null and category != ''">#{category},</if>
+            <if test="pic != null and pic != ''">#{pic},</if>
+            <if test="pubTime != null">#{pubTime},</if>
+            <if test="amount != null">#{amount},</if>
+            <if test="price != null">#{price},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookBooks" parameterType="BookBooks">
+        update book_books
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="info != null">info = #{info},</if>
+            <if test="author != null">author = #{author},</if>
+            <if test="publisher != null">publisher = #{publisher},</if>
+            <if test="category != null and category != ''">category = #{category},</if>
+            <if test="pic != null and pic != ''">pic = #{pic},</if>
+            <if test="pubTime != null">pub_time = #{pubTime},</if>
+            <if test="amount != null">amount = #{amount},</if>
+            <if test="price != null">price = #{price},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookBooksById" parameterType="Long">
+        delete from book_books where id = #{id}
+    </delete>
+
+    <delete id="deleteBookBooksByIds" parameterType="String">
+        delete from book_books where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('进货管理列表')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+        <div class="row">
+
+            <div class="btn-group-sm" id="toolbar" role="group">
+                <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="lottery:cart:add">
+                    <i class="fa fa-plus"></i> 添加采购条目
+                </a>
+                <a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="lottery:cart:edit">
+                    <i class="fa fa-edit"></i> 修改条目
+                </a>
+                <a class="btn btn-primary" onclick="jiesuan()" shiro:hasPermission="lottery:cart:edit">
+                    <i class="fa fa-edit"></i> 入库本批采购
+                </a>
+
+            </div>
+            <div class="col-sm-12 select-table table-striped">
+                <table id="bootstrap-table"></table>
+            </div>
+        </div>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var editFlag = [[${@permission.hasPermi('lottery:cart:edit')}]];
+        var removeFlag = [[${@permission.hasPermi('lottery:cart:remove')}]];
+        var bookIdDatas = [[${@books.toDict()}]];
+        var customerIdDatas = [[${@customers.toDict()}]];
+        var prefix = ctx + "lottery/cart";
+
+        function jiesuan(){
+            $.get(ctx+'lottery/cart/tohistory',function(d){
+                $.modal.msg(d.msg);
+                if(d.code == 0){
+                    setTimeout(()=>{window.location.href=ctx + 'lottery/history'},500);
+                }
+            });
+
+            // window.location.href=ctx + 'lottery/history'
+        }
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+                exportUrl: prefix + "/export",
+                modalName: "进货管理",
+                columns: [{
+                    checkbox: true
+                },
+                {
+                    field: 'id',
+                    title: '',
+                    visible: false
+                },
+                {
+                    field: 'bookId',
+                    title: '采购图书',
+                    formatter: function(value, row, index) {
+                       return $.table.selectDictLabel(bookIdDatas, value);
+                    }
+                },
+                {
+                    field: 'amount',
+                    title: '采购数量'
+                },
+                {
+                    field: 'customerId',
+                    title: '供货商',
+                    formatter: function(value, row, index) {
+                       return $.table.selectDictLabel(customerIdDatas, value);
+                    }
+                },
+                {
+                    field: 'createTime',
+                    title: '采购时间'
+                },
+                {
+                    field: 'price',
+                    title: '采购价'
+                },
+                {
+                    title: '操作',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                        actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+                        actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i>删除</a>');
+                        return actions.join('');
+                    }
+                }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

@@ -220,7 +220,7 @@ public class ShiroConfig
         manager.setDeleteInvalidSessions(true);
         // 设置全局session超时时间
         manager.setGlobalSessionTimeout(expireTime * 60 * 1000);
-        // 去掉 JSESSIONID
+        // 去掉 RJSESSIONID
         manager.setSessionIdUrlRewritingEnabled(false);
         // 定义要使用的无效的Session定时调度器
         manager.setSessionValidationScheduler(SpringUtils.getBean(SpringSessionValidationScheduler.class));

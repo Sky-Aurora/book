@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('进货记录列表')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+        <div class="row">
+            <div class="col-sm-12 search-collapse">
+                <form id="formId">
+                    <div class="select-list">
+                        <ul>
+                            <li>
+                                <label>采购图书：</label>
+                                <select name="bookId" th:with="bks=${@books.getAll()}">
+                                    <option value="">所有</option>
+                                    <option th:each="b : ${bks}" th:text="${b.name}" th:value="${b.id}"></option>
+                                </select>
+                            </li>
+                            <li>
+                                <label>采购客户：</label>
+                                <select name="customerId" th:with="cust=${@customers.getAll()}">
+                                    <option value="">所有</option>
+                                    <option th:each="c : ${cust}" th:text="${c.name}" th:value="${c.id}"></option>
+                                </select>
+                            </li>
+                            <li class="select-time">
+                                <label>采购时间：</label>
+                                <input type="text" class="layui-datetime" placeholder="开始时间" name="params[beginCreateTime]"/>
+                                <span>-</span>
+                                <input type="text" class="layui-datetime" placeholder="结束时间" name="params[endCreateTime]"/>
+                            </li>
+                            <li>
+                                <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;查找采购记录</a>
+                                <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <div class="btn-group-sm" id="toolbar" role="group">
+                <a class="btn btn-success" onclick="toCart()" shiro:hasPermission="lottery:history:add">
+                    <i class="fa fa-plus"></i> 继续采购
+                </a>
+            </div>
+            <div class="col-sm-12 select-table table-striped">
+                <table id="bootstrap-table"></table>
+            </div>
+        </div>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var editFlag = [[${@permission.hasPermi('lottery:history:edit')}]];
+        var removeFlag = [[${@permission.hasPermi('lottery:history:remove')}]];
+        var bookIdDatas = [[${@books.toDict()}]];
+        var customerIdDatas = [[${@customers.toDict()}]];
+        var prefix = ctx + "lottery/history";
+
+        function toCart(){
+
+            window.location.href=ctx+'lottery/cart';
+        }
+
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+                exportUrl: prefix + "/export",
+                modalName: "进货记录",
+                columns: [{
+                    checkbox: true
+                },
+                {
+                    field: 'id',
+                    title: '',
+                    visible: false
+                },
+                {
+                    field: 'bookId',
+                    title: '采购图书',
+                    formatter: function(value, row, index) {
+                       return $.table.selectDictLabel(bookIdDatas, value);
+                    }
+                },
+                {
+                    field: 'amount',
+                    title: '采购数量'
+                },
+                {
+                    field: 'customerId',
+                    title: '采购客户',
+                    formatter: function(value, row, index) {
+                       return $.table.selectDictLabel(customerIdDatas, value);
+                    }
+                },
+                {
+                    field: 'createTime',
+                    title: '采购时间'
+                },
+                {
+                    field: 'price',
+                    title: '采购价'
+                }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

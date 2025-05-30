@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookRecordsMapper">
+    
+    <resultMap type="BookRecords" id="BookRecordsResult">
+        <result property="id"    column="id"    />
+        <result property="supplierId"    column="supplier_id"    />
+        <result property="bookId"    column="book_id"    />
+        <result property="quantity"    column="quantity"    />
+        <result property="purchaseDate"    column="purchase_date"    />
+    </resultMap>
+
+    <sql id="selectBookRecordsVo">
+        select id, supplier_id, book_id, quantity, purchase_date from book_records
+    </sql>
+
+    <select id="selectBookRecordsList" parameterType="BookRecords" resultMap="BookRecordsResult">
+        <include refid="selectBookRecordsVo"/>
+        <where>  
+            <if test="supplierId != null "> and supplier_id = #{supplierId}</if>
+            <if test="bookId != null "> and book_id = #{bookId}</if>
+            <if test="quantity != null "> and quantity = #{quantity}</if>
+            <if test="purchaseDate != null "> and purchase_date = #{purchaseDate}</if>
+        </where>
+    </select>
+    
+    <select id="selectBookRecordsById" parameterType="Long" resultMap="BookRecordsResult">
+        <include refid="selectBookRecordsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookRecords" parameterType="BookRecords" useGeneratedKeys="true" keyProperty="id">
+        insert into book_records
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="supplierId != null">supplier_id,</if>
+            <if test="bookId != null">book_id,</if>
+            <if test="quantity != null">quantity,</if>
+            <if test="purchaseDate != null">purchase_date,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="supplierId != null">#{supplierId},</if>
+            <if test="bookId != null">#{bookId},</if>
+            <if test="quantity != null">#{quantity},</if>
+            <if test="purchaseDate != null">#{purchaseDate},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookRecords" parameterType="BookRecords">
+        update book_records
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="supplierId != null">supplier_id = #{supplierId},</if>
+            <if test="bookId != null">book_id = #{bookId},</if>
+            <if test="quantity != null">quantity = #{quantity},</if>
+            <if test="purchaseDate != null">purchase_date = #{purchaseDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookRecordsById" parameterType="Long">
+        delete from book_records where id = #{id}
+    </delete>
+
+    <delete id="deleteBookRecordsByIds" parameterType="String">
+        delete from book_records where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

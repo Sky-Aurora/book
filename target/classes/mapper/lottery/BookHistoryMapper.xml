@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookHistoryMapper">
+    
+    <resultMap type="BookHistory" id="BookHistoryResult">
+        <result property="id"    column="id"    />
+        <result property="bookId"    column="book_id"    />
+        <result property="amount"    column="amount"    />
+        <result property="customerId"    column="customer_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="price"    column="price"    />
+    </resultMap>
+
+    <sql id="selectBookHistoryVo">
+        select id, book_id, amount, customer_id, create_time, price from book_history
+    </sql>
+
+    <select id="selectBookHistoryList" parameterType="BookHistory" resultMap="BookHistoryResult">
+        <include refid="selectBookHistoryVo"/>
+        <where>  
+            <if test="bookId != null "> and book_id = #{bookId}</if>
+            <if test="customerId != null "> and customer_id = #{customerId}</if>
+            <if test="params.beginCreateTime != null and params.beginCreateTime != '' and params.endCreateTime != null and params.endCreateTime != ''"> and create_time between #{params.beginCreateTime} and #{params.endCreateTime}</if>
+        </where>
+        order by id desc
+    </select>
+    
+    <select id="selectBookHistoryById" parameterType="Long" resultMap="BookHistoryResult">
+        <include refid="selectBookHistoryVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookHistory" parameterType="BookHistory" useGeneratedKeys="true" keyProperty="id">
+        insert into book_history
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">book_id,</if>
+            <if test="amount != null">amount,</if>
+            <if test="customerId != null">customer_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="price != null">price,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">#{bookId},</if>
+            <if test="amount != null">#{amount},</if>
+            <if test="customerId != null">#{customerId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="price != null">#{price},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookHistory" parameterType="BookHistory">
+        update book_history
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="bookId != null">book_id = #{bookId},</if>
+            <if test="amount != null">amount = #{amount},</if>
+            <if test="customerId != null">customer_id = #{customerId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="price != null">price = #{price},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookHistoryById" parameterType="Long">
+        delete from book_history where id = #{id}
+    </delete>
+
+    <delete id="deleteBookHistoryByIds" parameterType="String">
+        delete from book_history where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookCustomerMapper">
+    
+    <resultMap type="BookCustomer" id="BookCustomerResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="phone"    column="phone"    />
+        <result property="info"    column="info"    />
+        <result property="address"    column="address"    />
+        <result property="level"    column="level"    />
+    </resultMap>
+
+    <sql id="selectBookCustomerVo">
+        select id, name, phone, info, address, level from book_customer
+    </sql>
+
+    <select id="selectBookCustomerList" parameterType="BookCustomer" resultMap="BookCustomerResult">
+        <include refid="selectBookCustomerVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="phone != null  and phone != ''"> and phone like concat('%', #{phone}, '%')</if>
+            <if test="level != null  and level != ''"> and level = #{level}</if>
+        </where>
+    </select>
+    
+    <select id="selectBookCustomerById" parameterType="Long" resultMap="BookCustomerResult">
+        <include refid="selectBookCustomerVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookCustomer" parameterType="BookCustomer" useGeneratedKeys="true" keyProperty="id">
+        insert into book_customer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">name,</if>
+            <if test="phone != null">phone,</if>
+            <if test="info != null">info,</if>
+            <if test="address != null">address,</if>
+            <if test="level != null">level,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">#{name},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="info != null">#{info},</if>
+            <if test="address != null">#{address},</if>
+            <if test="level != null">#{level},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookCustomer" parameterType="BookCustomer">
+        update book_customer
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="info != null">info = #{info},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="level != null">level = #{level},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookCustomerById" parameterType="Long">
+        delete from book_customer where id = #{id}
+    </delete>
+
+    <delete id="deleteBookCustomerByIds" parameterType="String">
+        delete from book_customer where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

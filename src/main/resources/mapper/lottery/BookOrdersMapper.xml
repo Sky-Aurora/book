@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookOrdersMapper">
+    
+    <resultMap type="BookOrders" id="BookOrdersResult">
+        <result property="id"    column="id"    />
+        <result property="customerId"    column="customer_id"    />
+        <result property="totalamount"    column="totalamount"    />
+        <result property="status"    column="status"    />
+        <result property="orderDate"    column="order_date"    />
+        <result property="deliveryAddre"    column="delivery_addre"    />
+    </resultMap>
+
+    <sql id="selectBookOrdersVo">
+        select id, customer_id, totalamount, status, order_date, delivery_addre from book_orders
+    </sql>
+
+    <select id="selectBookOrdersList" parameterType="BookOrders" resultMap="BookOrdersResult">
+        <include refid="selectBookOrdersVo"/>
+        <where>  
+            <if test="customerId != null "> and customer_id = #{customerId}</if>
+            <if test="totalamount != null "> and totalamount = #{totalamount}</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="orderDate != null "> and order_date = #{orderDate}</if>
+            <if test="deliveryAddre != null  and deliveryAddre != ''"> and delivery_addre = #{deliveryAddre}</if>
+        </where>
+    </select>
+    
+    <select id="selectBookOrdersById" parameterType="Long" resultMap="BookOrdersResult">
+        <include refid="selectBookOrdersVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookOrders" parameterType="BookOrders" useGeneratedKeys="true" keyProperty="id">
+        insert into book_orders
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="customerId != null">customer_id,</if>
+            <if test="totalamount != null">totalamount,</if>
+            <if test="status != null">status,</if>
+            <if test="orderDate != null">order_date,</if>
+            <if test="deliveryAddre != null and deliveryAddre != ''">delivery_addre,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="customerId != null">#{customerId},</if>
+            <if test="totalamount != null">#{totalamount},</if>
+            <if test="status != null">#{status},</if>
+            <if test="orderDate != null">#{orderDate},</if>
+            <if test="deliveryAddre != null and deliveryAddre != ''">#{deliveryAddre},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookOrders" parameterType="BookOrders">
+        update book_orders
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="customerId != null">customer_id = #{customerId},</if>
+            <if test="totalamount != null">totalamount = #{totalamount},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="orderDate != null">order_date = #{orderDate},</if>
+            <if test="deliveryAddre != null and deliveryAddre != ''">delivery_addre = #{deliveryAddre},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookOrdersById" parameterType="Long">
+        delete from book_orders where id = #{id}
+    </delete>
+
+    <delete id="deleteBookOrdersByIds" parameterType="String">
+        delete from book_orders where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

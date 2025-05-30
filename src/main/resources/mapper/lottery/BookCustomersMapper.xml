@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.lottery.mapper.BookCustomersMapper">
+    
+    <resultMap type="BookCustomers" id="BookCustomersResult">
+        <result property="id"    column="id"    />
+        <result property="customerName"    column="customer_name"    />
+        <result property="phoneNumber"    column="phone_number"    />
+        <result property="email"    column="email"    />
+        <result property="address"    column="address"    />
+        <result property="createAt"    column="create_at"    />
+        <result property="updatAt"    column="updat_at"    />
+    </resultMap>
+
+    <sql id="selectBookCustomersVo">
+        select id, customer_name, phone_number, email, address, create_at, updat_at from book_customers
+    </sql>
+
+    <select id="selectBookCustomersList" parameterType="BookCustomers" resultMap="BookCustomersResult">
+        <include refid="selectBookCustomersVo"/>
+        <where>  
+            <if test="customerName != null  and customerName != ''"> and customer_name like concat('%', #{customerName}, '%')</if>
+            <if test="phoneNumber != null  and phoneNumber != ''"> and phone_number = #{phoneNumber}</if>
+            <if test="email != null  and email != ''"> and email = #{email}</if>
+            <if test="address != null  and address != ''"> and address = #{address}</if>
+            <if test="createAt != null "> and create_at = #{createAt}</if>
+            <if test="updatAt != null "> and updat_at = #{updatAt}</if>
+        </where>
+    </select>
+    
+    <select id="selectBookCustomersById" parameterType="Long" resultMap="BookCustomersResult">
+        <include refid="selectBookCustomersVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBookCustomers" parameterType="BookCustomers" useGeneratedKeys="true" keyProperty="id">
+        insert into book_customers
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="customerName != null and customerName != ''">customer_name,</if>
+            <if test="phoneNumber != null and phoneNumber != ''">phone_number,</if>
+            <if test="email != null">email,</if>
+            <if test="address != null and address != ''">address,</if>
+            <if test="createAt != null">create_at,</if>
+            <if test="updatAt != null">updat_at,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="customerName != null and customerName != ''">#{customerName},</if>
+            <if test="phoneNumber != null and phoneNumber != ''">#{phoneNumber},</if>
+            <if test="email != null">#{email},</if>
+            <if test="address != null and address != ''">#{address},</if>
+            <if test="createAt != null">#{createAt},</if>
+            <if test="updatAt != null">#{updatAt},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBookCustomers" parameterType="BookCustomers">
+        update book_customers
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="customerName != null and customerName != ''">customer_name = #{customerName},</if>
+            <if test="phoneNumber != null and phoneNumber != ''">phone_number = #{phoneNumber},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="address != null and address != ''">address = #{address},</if>
+            <if test="createAt != null">create_at = #{createAt},</if>
+            <if test="updatAt != null">updat_at = #{updatAt},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBookCustomersById" parameterType="Long">
+        delete from book_customers where id = #{id}
+    </delete>
+
+    <delete id="deleteBookCustomersByIds" parameterType="String">
+        delete from book_customers where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
