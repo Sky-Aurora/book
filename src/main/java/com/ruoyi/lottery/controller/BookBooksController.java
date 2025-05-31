@@ -21,9 +21,7 @@ import com.ruoyi.common.core.page.TableDataInfo;
 
 /**
  * 图书管理Controller
- * 
- * @author Shawn
- * @date 2024-03-04
+ *
  */
 @Controller
 @RequestMapping("/lottery/books")
