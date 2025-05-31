@@ -5,24 +5,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58894b62-f72e-4c13-bdff-797c2271578e" name="Changes" comment="main">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/ruoyi/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/ruoyi/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookCustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookCustomersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookOrderdetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookOrderdetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookOrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookRecordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookRecordsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookSaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookSuppliersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/controller/BookSuppliersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCarts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCarts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookCustomers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookOrderdetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookOrderdetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookRecords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookSale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookSale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookSuppliers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/domain/BookSuppliers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookBooksMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookBooksMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookCartMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookCartMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookCustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookCustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookCustomersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookCustomersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookHistoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookOrderdetailsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookOrderdetailsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookOrdersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookOrdersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookRecordsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookRecordsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookSaleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookSaleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookSuppliersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/mapper/BookSuppliersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookBooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookBooksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCartsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCartsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCustomersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookCustomersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookHistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookOrderdetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookOrderdetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookOrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookOrdersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookRecordsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookRecordsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookSaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookSaleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookSuppliersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/IBookSuppliersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookBooksServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookBooksServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookCartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookCartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookCustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookCustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookCustomersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookCustomersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookHistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookOrderdetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookOrderdetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookOrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookOrdersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookRecordsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookRecordsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookSaleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookSaleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookSuppliersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ruoyi/lottery/service/impl/BookSuppliersServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +187,7 @@
       <workItem from="1748605724032" duration="1652000" />
       <workItem from="1748607406427" duration="3552000" />
       <workItem from="1748652961357" duration="5838000" />
-      <workItem from="1748675987321" duration="1739000" />
+      <workItem from="1748675987321" duration="2686000" />
     </task>
     <task id="LOCAL-00001" summary="main">
       <created>1748607247946</created>
@@ -162,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1748607247946</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="main">
+      <created>1748678117558</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748678117558</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

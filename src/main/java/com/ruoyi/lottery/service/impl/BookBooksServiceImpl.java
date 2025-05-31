@@ -13,9 +13,7 @@ import com.ruoyi.common.core.text.Convert;
 
 /**
  * 图书管理Service业务层处理
- * 
- * @author Shawn
- * @date 2024-03-04
+ *
  */
 @Service("books")
 public class BookBooksServiceImpl implements IBookBooksService 

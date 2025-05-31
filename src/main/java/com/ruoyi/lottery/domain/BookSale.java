@@ -7,9 +7,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
  * 销售记录对象 book_sale
- * 
- * @author Shawn
- * @date 2024-03-05
+ *
  */
 public class BookSale extends BaseEntity
 {

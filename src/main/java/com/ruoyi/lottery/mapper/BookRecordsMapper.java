@@ -5,9 +5,7 @@ import com.ruoyi.lottery.domain.BookRecords;
 
 /**
  * 采购记录Mapper接口
- * 
- * @author Shawn
- * @date 2024-02-29
+ *
  */
 public interface BookRecordsMapper 
 {

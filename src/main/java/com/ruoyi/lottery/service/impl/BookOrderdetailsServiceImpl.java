@@ -11,9 +11,7 @@ import com.ruoyi.common.core.text.Convert;
 
 /**
  * 订单明细Service业务层处理
- * 
- * @author Shawn
- * @date 2024-02-29
+ *
  */
 @Service
 public class BookOrderdetailsServiceImpl implements IBookOrderdetailsService 

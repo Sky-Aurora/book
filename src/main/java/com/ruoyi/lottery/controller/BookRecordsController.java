@@ -21,9 +21,7 @@ import com.ruoyi.common.core.page.TableDataInfo;
 
 /**
  * 采购记录Controller
- * 
- * @author Shawn
- * @date 2024-02-29
+ *
  */
 @Controller
 @RequestMapping("/lottery/records")

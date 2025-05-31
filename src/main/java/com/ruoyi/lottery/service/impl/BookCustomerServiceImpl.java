@@ -14,9 +14,7 @@ import com.ruoyi.common.core.text.Convert;
 
 /**
  * 客户管理Service业务层处理
- * 
- * @author Shawn
- * @date 2024-03-04
+ *
  */
 @Service("customers")
 public class BookCustomerServiceImpl implements IBookCustomerService 

@@ -5,9 +5,7 @@ import com.ruoyi.lottery.domain.BookOrderdetails;
 
 /**
  * 订单明细Service接口
- * 
- * @author Shawn
- * @date 2024-02-29
+ *
  */
 public interface IBookOrderdetailsService 
 {

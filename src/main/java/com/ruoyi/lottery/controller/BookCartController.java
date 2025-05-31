@@ -33,9 +33,7 @@ import com.ruoyi.common.core.page.TableDataInfo;
 
 /**
  * 进货管理Controller
- * 
- * @author Shawn
- * @date 2024-03-04
+ *
  */
 @Controller
 @RequestMapping("/lottery/cart")

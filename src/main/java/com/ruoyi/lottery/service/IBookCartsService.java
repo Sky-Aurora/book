@@ -5,9 +5,7 @@ import com.ruoyi.lottery.domain.BookCarts;
 
 /**
  * 购物车Service接口
- * 
- * @author Shawn
- * @date 2024-02-29
+ *
  */
 public interface IBookCartsService 
 {

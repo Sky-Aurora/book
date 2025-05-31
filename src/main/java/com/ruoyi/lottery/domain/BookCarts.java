@@ -9,9 +9,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
  * 购物车对象 book_carts
- * 
- * @author Shawn
- * @date 2024-02-29
+ *
  */
 public class BookCarts extends BaseEntity
 {

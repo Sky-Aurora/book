@@ -9,9 +9,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
  * 图书管理对象 book_books
- * 
- * @author Shawn
- * @date 2024-03-04
+ *
  */
 public class BookBooks extends BaseEntity
 {
