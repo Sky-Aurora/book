@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="58894b62-f72e-4c13-bdff-797c2271578e" name="Changes" comment="main">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/ruoyi/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/ruoyi/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="bf06beb8-83f5-436c-b87f-52521a2addf1" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/static/css/login.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/static/css/login.min.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/login.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/main.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/main_v1.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2d2HGAeeD9VZNBIBsvrqU3X7gYx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showModules" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/桌面/代码/book/src/main/resources/static/js",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "spring.configuration.checksum": "821f03288846297c2cf43c34766a38f7",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\桌面\代码\book\src\main\resources\static\js" />
+      <recent name="D:\桌面\代码\book\src\main\resources\static\css" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\桌面\代码\book\src\main\resources\static\ruoyi\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="book" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ruoyi.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58894b62-f72e-4c13-bdff-797c2271578e" name="Changes" comment="" />
+      <created>1709199158029</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709199158029</updated>
+      <workItem from="1709199161763" duration="1120000" />
+      <workItem from="1709200332447" duration="2057000" />
+      <workItem from="1709519186528" duration="19982000" />
+      <workItem from="1709720429611" duration="1278000" />
+      <workItem from="1747477757726" duration="1752000" />
+      <workItem from="1747533672760" duration="3113000" />
+      <workItem from="1747553245334" duration="4005000" />
+      <workItem from="1747642763633" duration="2426000" />
+      <workItem from="1747702649204" duration="7476000" />
+      <workItem from="1747732259709" duration="3421000" />
+      <workItem from="1747789434628" duration="1445000" />
+      <workItem from="1747874169360" duration="3216000" />
+      <workItem from="1748132292291" duration="2804000" />
+      <workItem from="1748155847968" duration="2340000" />
+      <workItem from="1748518594562" duration="1751000" />
+      <workItem from="1748564158355" duration="313000" />
+      <workItem from="1748567389799" duration="711000" />
+      <workItem from="1748588127536" duration="8403000" />
+      <workItem from="1748605724032" duration="1652000" />
+      <workItem from="1748607406427" duration="3552000" />
+      <workItem from="1748652961357" duration="5838000" />
+      <workItem from="1748675987321" duration="1067000" />
+    </task>
+    <task id="LOCAL-00001" summary="main">
+      <created>1748607247946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748607247946</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="main" />
+    <option name="LAST_COMMIT_MESSAGE" value="main" />
+  </component>
+</project>

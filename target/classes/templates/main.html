@@ -2,8 +2,8 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <th:block th:include="include :: header('百度ECharts')" />
-    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet"/>
-    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 
 </head>
 <body class="gray-bg">
@@ -14,14 +14,68 @@
     </div>
 
 </div>
-<div class="wrapper wrapper-content animated fadeInRight">
-    <img src="/img/book.jpg" width="100%" height="100%">
+<!--<div class="wrapper wrapper-content animated fadeInRight">-->
+<!--    <img src="/img/book.jpg" width="100%" height="100%">-->
 
-</div>
+    <div class="container col-sm-12">
+        <div id="slide">
+<!--            <div class="item" style="background-image: url(img/1.jpg);">-->
+            <div class="item" th:style="'background-image: url(' + @{/img/1.jpg} + ');'">
+
+                <div class="content">
+                    <div class="name">茑屋书香：知识的静谧殿堂</div>
+                    <div class="des">茑屋书店内，书架林立，书籍琳琅。暖黄灯光洒落，营造出静谧氛围，是心灵栖息、探寻知识的美好天地。</div>
+                </div>
+            </div>
+<!--            <div class="item" style="background-image: url(img/2.jpg);">-->
+            <div class="item" th:style="'background-image: url(' + @{/img/2.jpg} + ');'">
+                <div class="content">
+                    <div class="name">西安方所：知识与美学交融之所</div>
+                    <div class="des">西安方所书店，将西安城墙瓮城与罗马门洞元素融合。踏入其中，书架林立，绿植点缀，是邂逅书香、品味美学生活的理想之地。</div>
+                </div>
+            </div>
+<!--            <div class="item" style="background-image: url(img/3.jpg);">-->
+            <div class="item" th:style="'background-image: url(' + @{/img/3.jpg} + ');'">
+                <div class="content">
+                    <div class="name">书香谧境：心灵的栖息角落</div>
+                    <div class="des">在这书店一隅，书籍环抱。阳光透窗，洒在书页，一人静坐，时光在此放慢，是喧嚣中寻得的静谧阅读天地。</div>
+                </div>
+            </div>
+<!--            <div class="item" style="background-image: url(img/4.jpg);">-->
+            <div class="item" th:style="'background-image: url(' + @{/img/4.jpg} + ');'">
+                <div class="content">
+                    <div class="name">夜中书韵：静谧的知识暖巢</div>
+                    <div class="des">夜幕降临，书店内暖光相伴，书架错落有致。玻璃窗外夜色朦胧，这里宛如知识的暖巢，静候读者来探寻书中的璀璨世界。</div>
+                </div>
+            </div>
+<!--            <div class="item" style="background-image: url(img/5.jpg);">-->
+            <div class="item" th:style="'background-image: url(' + @{/img/5.jpg} + ');'">
+                <div class="content">
+                    <div class="name">书海绮境：知识的梦幻长廊</div>
+                    <div class="des">步入这书店，仿若踏入书的梦幻王国。层层书架似知识的山峦，暖光铺陈，邀人在书海长廊里开启奇妙的阅读之旅。</div>
+                </div>
+            </div>
+<!--            <div class="item" style="background-image: url(img/6.jpg);">-->
+            <div class="item" th:style="'background-image: url(' + @{/img/6.jpg} + ');'">
+                <div class="content">
+                    <div class="name">书山幻域：知识的螺旋殿堂</div>
+                    <div class="des">踏入这书店，如入知识的螺旋幻域。层层叠叠的书架似知识的浪潮，环抱一方静谧，引领人们在书的宇宙中探寻无尽智慧。</div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="s_button">&lt;</div>
+            <div class="s_button">&gt;</div>
+        </div>
+    </div>
+<!--</div>-->
+
+
 <th:block th:include="include :: footer" />
 <th:block th:include="include :: echarts-js" />
 <script type="text/javascript"></script>
-<script src="../static/ruoyi/main.js" th:src="@{/ruoyi/main.js}"></script>
-<script th:src="@{/static/ruoyi/main.js}"></script>
+
+<script th:src="@{/js/main.js}" defer></script>
 </body>
 </html>
+
