@@ -24,7 +24,7 @@ import com.ruoyi.common.core.page.TableDataInfo;
  *
  */
 @Controller
-@RequestMapping("/lottery/orders")
+@RequestMapping("/lottery/orders")  //  当用户访问 /lottery/orders 这个 URL 时，会触发被该注解修饰的方法进行处理。
 public class BookOrdersController extends BaseController
 {
     private String prefix = "lottery/orders";

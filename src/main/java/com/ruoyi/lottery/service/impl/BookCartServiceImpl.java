@@ -77,6 +77,7 @@ public class BookCartServiceImpl implements IBookCartService
     @Override
     public int deleteBookCartByIds(String ids)
     {
+        //  通过传入多个 ID（以字符串数组形式），可以一次性删除多条记录，而不需要多次调用单条删除方法。
         return bookCartMapper.deleteBookCartByIds(Convert.toStrArray(ids));
     }
 

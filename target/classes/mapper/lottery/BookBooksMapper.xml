@@ -3,8 +3,10 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ruoyi.lottery.mapper.BookBooksMapper">
-    
+
+    <!-- 定义一个名为BookBooksResult的结果映射，用于将查询结果映射到BookBooks类 -->
     <resultMap type="BookBooks" id="BookBooksResult">
+        <!-- 映射id属性到id列 -->
         <result property="id"    column="id"    />
         <result property="name"    column="name"    />
         <result property="info"    column="info"    />
@@ -17,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="price"    column="price"    />
     </resultMap>
 
+    <!-- 定义一个SQL片段，用于查询book_books表中的所有列 -->
     <sql id="selectBookBooksVo">
         select id, name, info, author, publisher, category, pic, pub_time, amount, price from book_books
     </sql>
@@ -31,63 +34,68 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="params.beginPubTime != null and params.beginPubTime != '' and params.endPubTime != null and params.endPubTime != ''"> and pub_time between #{params.beginPubTime} and #{params.endPubTime}</if>
         </where>
     </select>
-    
+
+    <!-- 定义一个根据ID查询的SELECT语句，参数类型为Long，使用BookBooksResult结果映射 -->
     <select id="selectBookBooksById" parameterType="Long" resultMap="BookBooksResult">
         <include refid="selectBookBooksVo"/>
         where id = #{id}
     </select>
-        
+
+    <!-- 定义一个INSERT语句，参数类型为BookBooks，使用生成的键值更新id属性 -->
     <insert id="insertBookBooks" parameterType="BookBooks" useGeneratedKeys="true" keyProperty="id">
-        insert into book_books
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="name != null and name != ''">name,</if>
-            <if test="info != null">info,</if>
-            <if test="author != null">author,</if>
-            <if test="publisher != null">publisher,</if>
-            <if test="category != null and category != ''">category,</if>
-            <if test="pic != null and pic != ''">pic,</if>
-            <if test="pubTime != null">pub_time,</if>
-            <if test="amount != null">amount,</if>
-            <if test="price != null">price,</if>
-         </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="name != null and name != ''">#{name},</if>
-            <if test="info != null">#{info},</if>
-            <if test="author != null">#{author},</if>
-            <if test="publisher != null">#{publisher},</if>
-            <if test="category != null and category != ''">#{category},</if>
-            <if test="pic != null and pic != ''">#{pic},</if>
-            <if test="pubTime != null">#{pubTime},</if>
-            <if test="amount != null">#{amount},</if>
-            <if test="price != null">#{price},</if>
-         </trim>
-    </insert>
-
-    <update id="updateBookBooks" parameterType="BookBooks">
-        update book_books
-        <trim prefix="SET" suffixOverrides=",">
-            <if test="name != null and name != ''">name = #{name},</if>
-            <if test="info != null">info = #{info},</if>
-            <if test="author != null">author = #{author},</if>
-            <if test="publisher != null">publisher = #{publisher},</if>
-            <if test="category != null and category != ''">category = #{category},</if>
-            <if test="pic != null and pic != ''">pic = #{pic},</if>
-            <if test="pubTime != null">pub_time = #{pubTime},</if>
-            <if test="amount != null">amount = #{amount},</if>
-            <if test="price != null">price = #{price},</if>
+        <!-- 插入数据到book_books表 -->
+       insert into book_books
+        <!-- 动态生成列名 -->
+       <trim prefix="(" suffix=")" suffixOverrides=",">
+           <if test="name != null and name != ''">name,</if>
+           <if test="info != null">info,</if>
+           <if test="author != null">author,</if>
+           <if test="publisher != null">publisher,</if>
+           <if test="category != null and category != ''">category,</if>
+           <if test="pic != null and pic != ''">pic,</if>
+           <if test="pubTime != null">pub_time,</if>
+           <if test="amount != null">amount,</if>
+           <if test="price != null">price,</if>
         </trim>
-        where id = #{id}
-    </update>
+        <!-- 动态生成值 -->
+       <trim prefix="values (" suffix=")" suffixOverrides=",">
+           <if test="name != null and name != ''">#{name},</if>
+           <if test="info != null">#{info},</if>
+           <if test="author != null">#{author},</if>
+           <if test="publisher != null">#{publisher},</if>
+           <if test="category != null and category != ''">#{category},</if>
+           <if test="pic != null and pic != ''">#{pic},</if>
+           <if test="pubTime != null">#{pubTime},</if>
+           <if test="amount != null">#{amount},</if>
+           <if test="price != null">#{price},</if>
+        </trim>
+   </insert>
 
-    <delete id="deleteBookBooksById" parameterType="Long">
-        delete from book_books where id = #{id}
-    </delete>
+   <update id="updateBookBooks" parameterType="BookBooks">
+       update book_books
+       <trim prefix="SET" suffixOverrides=",">
+           <if test="name != null and name != ''">name = #{name},</if>
+           <if test="info != null">info = #{info},</if>
+           <if test="author != null">author = #{author},</if>
+           <if test="publisher != null">publisher = #{publisher},</if>
+           <if test="category != null and category != ''">category = #{category},</if>
+           <if test="pic != null and pic != ''">pic = #{pic},</if>
+           <if test="pubTime != null">pub_time = #{pubTime},</if>
+           <if test="amount != null">amount = #{amount},</if>
+           <if test="price != null">price = #{price},</if>
+       </trim>
+       where id = #{id}
+   </update>
 
-    <delete id="deleteBookBooksByIds" parameterType="String">
-        delete from book_books where id in 
-        <foreach item="id" collection="array" open="(" separator="," close=")">
-            #{id}
-        </foreach>
-    </delete>
+   <delete id="deleteBookBooksById" parameterType="Long">
+       delete from book_books where id = #{id}
+   </delete>
+
+   <delete id="deleteBookBooksByIds" parameterType="String">
+       delete from book_books where id in
+       <foreach item="id" collection="array" open="(" separator="," close=")">
+           #{id}
+       </foreach>
+   </delete>
 
 </mapper>

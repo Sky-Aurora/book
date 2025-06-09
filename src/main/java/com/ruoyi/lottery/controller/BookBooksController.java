@@ -27,13 +27,15 @@ import com.ruoyi.common.core.page.TableDataInfo;
 @RequestMapping("/lottery/books")
 public class BookBooksController extends BaseController
 {
+    //  存储路径前缀
     private String prefix = "lottery/books";
 
     @Autowired
     private IBookBooksService bookBooksService;
 
+    //  访问 books() 方法需要用户拥有 "lottery:books:view" 权限
     @RequiresPermissions("lottery:books:view")
-    @GetMapping()
+    @GetMapping()   // 默认映射路径为类上的 "/lottery/books"。
     public String books()
     {
         return prefix + "/books";
@@ -95,6 +97,9 @@ public class BookBooksController extends BaseController
     public String edit(@PathVariable("id") Long id, ModelMap mmap)
     {
         BookBooks bookBooks = bookBooksService.selectBookBooksById(id);
+        //  用于在控制器和视图之间传递数据。
+        //   "bookBooks" 是键（key），作为视图中访问该对象的变量名。
+        //   bookBooks 是值（value），即从数据库查询出的图书实体对象。
         mmap.put("bookBooks", bookBooks);
         return prefix + "/edit";
     }

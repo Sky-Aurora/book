@@ -83,6 +83,10 @@ public class BookSaleController extends BaseController
 
     /**
      * 新增保存销售记录
+     * 该方法用于记录一本书的销售信息，包括验证书籍库存、扣减库存和记录销售详情
+     *
+     * @param bookSale 销售记录对象，包含书籍ID和销售相关信息
+     * @return 返回操作结果，包括成功或错误信息
      */
     @RequiresPermissions("lottery:sale:add")
     @Log(title = "销售记录", businessType = BusinessType.INSERT)
@@ -90,15 +94,22 @@ public class BookSaleController extends BaseController
     @ResponseBody
     public AjaxResult addSave(BookSale bookSale)
     {
+        // 根据书籍ID查询书籍信息
         BookBooks book = bookBooksService.selectBookBooksById(bookSale.getBookId());
+
+        // 检查书籍库存是否为0，如果为0则返回错误信息
         if (book.getAmount() == 0){
             return error("该书已经没有库存！");
         }else{
+            // 如果有库存，则扣减书籍库存
             book.setAmount(book.getAmount()-1);
             bookBooksService.updateBookBooks(book);
         }
+
+        // 插入销售记录并返回操作结果
         return toAjax(bookSaleService.insertBookSale(bookSale));
     }
+
 
     /**
      * 修改销售记录
@@ -127,21 +138,28 @@ public class BookSaleController extends BaseController
     /**
      * 删除销售记录
      */
-    @RequiresPermissions("lottery:sale:remove")
-    @Log(title = "销售记录", businessType = BusinessType.DELETE)
-    @PostMapping( "/remove")
+    @RequiresPermissions("lottery:sale:remove") // 表明该方法需要特定的权限才能执行
+    @Log(title = "销售记录", businessType = BusinessType.DELETE) // 记录操作日志，指定操作类型为删除
+    @PostMapping("/remove")
     @ResponseBody
     public AjaxResult remove(String ids)
     {
-        //删除销售记录，增库存
+        // 删除销售记录，并将与之关联的图书库存增加
+        // 将传入的ID字符串分割成ID数组
         String id[] = ids.split(",");
         for (String s : id) {
+            // 根据ID获取销售记录
             BookSale sale = bookSaleService.selectBookSaleById(Long.valueOf(s));
+            // 获取销售记录关联的图书信息
             BookBooks book = bookBooksService.selectBookBooksById(sale.getBookId());
+            // 将图书库存增加1
             book.setAmount(book.getAmount()+1);
+            // 更新图书信息
             bookBooksService.updateBookBooks(book);
         }
 
+        // 调用服务层方法，根据传入的ID删除销售记录
         return toAjax(bookSaleService.deleteBookSaleByIds(ids));
     }
+
 }
